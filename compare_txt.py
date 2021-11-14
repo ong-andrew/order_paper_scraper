@@ -2,12 +2,10 @@ def compare_txt():
     with open('temp.txt', 'r') as current, open('data.txt', 'r') as old:
         old_txt = old.readlines()
         current_txt = current.readlines()
-
-
-
+        
         if old_txt == current_txt: #compare the two files
             print("No change")
-
+            
         else: #return
             x = ""
             for line in current_txt:
