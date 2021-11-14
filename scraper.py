@@ -6,6 +6,7 @@ headers = {'user-agent': 'my-agent/1.0.1'}
 
 soup = BeautifulSoup(requests.get(url, headers=headers).text)
 table = soup.find("table") #find table tag
+
 links = table.find_all(['td','a'])
 
 def scraper():
@@ -16,8 +17,6 @@ def scraper():
             pass
         else:
             output += link.get('href') + "\n"
-
-    print(output)
 
     with open('temp.txt', 'w') as data: #create a temp file to store latest scrape
         data.writelines(output)
